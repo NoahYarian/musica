@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+  <head>
+    <title><%= title %> | Welcome Traveler</title>
+    <link rel='stylesheet' href='/stylesheets/main.css'>
+  </head>
+  <body>
+    <h1>ARTISTS</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Genre</th>
+        </tr>
+      </thead>
+      <tbody>
+      <% artists.forEach(function(artist) { %>
+        <tr>
+          <td><%= artist.name %></td>
+          <td><%= artist.genre %></td>
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  </body>
+</html>

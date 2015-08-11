@@ -1,0 +1,25 @@
+{
+  "name": "musica",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NoahYarian/musica.git"
+  },
+  "author": "Noah Yarian <Noah.Yarian@Gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NoahYarian/musica/issues"
+  },
+  "homepage": "https://github.com/NoahYarian/musica#readme",
+  "dependencies": {
+    "ejs": "^2.3.3",
+    "express": "^4.13.3",
+    "less-middleware": "^2.0.1",
+    "mongodb": "^2.0.40"
+  }
+}
