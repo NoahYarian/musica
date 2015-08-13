@@ -1,10 +1,12 @@
 <!doctype html>
 <html>
-  <head>
-    <title><%= title %> | Add an Album</title>
-    <link rel='stylesheet' href='/stylesheets/main.css'>
-  </head>
+  <%- include('head', {page: 'Add an Album'}) %>
   <body>
+    <div>
+      <a href='/artist'>Add an artist</a>
+      <a href='/album'>Add an album</a>
+      <a href='/'>Index</a>
+    </div>
     <h1>ADD AN ALBUM</h1>
     <form action='/album/add' method='post'>
       Group: <input name='group' placeholder='Start typing to populate...'>
@@ -16,5 +18,6 @@
         <div><a href='#'><%= artist.name %></a></div>
       <% }); %>
     </div>
+    <%- include('javascripts') %>
   </body>
 </html>
