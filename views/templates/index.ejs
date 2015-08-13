@@ -5,22 +5,55 @@
     <link rel='stylesheet' href='/stylesheets/main.css'>
   </head>
   <body>
-    <h1>ARTISTS</h1>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Genre</th>
-        </tr>
-      </thead>
-      <tbody>
-      <% artists.forEach(function(artist) { %>
-        <tr>
-          <td><%= artist.name %></td>
-          <td><%= artist.genre %></td>
-        </tr>
-        <% }); %>
-      </tbody>
-    </table>
+    <div class='artists'>
+      <h1>ARTISTS</h1>
+      <a href='/artist'>Add an artist</a>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Genre</th>
+          </tr>
+        </thead>
+        <tbody>
+        <% artists.forEach(function(artist) { %>
+          <tr>
+            <td><%= artist.name %></td>
+            <td><%= artist.genre %></td>
+            <td>
+              <form action='/artist/<%= artist._id %>/delete' method='POST'>
+                <input type='submit' value='Delete'>
+              </form>
+            </td>
+          </tr>
+          <% }); %>
+        </tbody>
+      </table>
+    </div>
+    <div class='albums'>
+      <h1>ALBUMS</h1>
+      <a href='/album'>Add an album</a>
+      <table>
+        <thead>
+          <tr>
+            <th>Group</th>
+            <th>Title</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% albums.forEach(function(album) { %>
+            <tr>
+              <td><%= album.group %></td>
+              <td><%= album.title %></td>
+              <td>
+                <form action='/album/<%= album._id %>/delete' method='POST'>
+                  <input type='submit' value='Delete'>
+                </form>
+              </td>
+            </tr>
+          <% }); %>
+        </tbody>
+      </table>
+    </div>
   </body>
 </html>

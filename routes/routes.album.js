@@ -1,20 +1,23 @@
 var express = require('express');
 var router = express.Router();
 var ObjectID = require('mongodb').ObjectID;
+var getArtistResults = require('../lib/album');
 
 router.get('/', function (req, res) {
-  res.render('templates/artist');
+  var collection = global.db.collection('artists');
+  var artistResults = [];
+  res.render('templates/album', {artistResults: artistResults});
 });
 
 router.post('/add', function (req, res) {
-  var collection = global.db.collection('artists');
+  var collection = global.db.collection('albums');
   collection.save(req.body, function () {
     res.redirect('/');
   });
 });
 
 router.post('/:id/delete', function (req, res) {
-  var collection = global.db.collection('artists');
+  var collection = global.db.collection('albums');
   collection.remove({_id: ObjectID(req.params.id)});
   res.redirect('/');
 });
