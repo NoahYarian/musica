@@ -22,7 +22,7 @@ router.post('/login', function doLogin(req, res) {
     console.log("req.session", req.session);
     req.session.regenerate(function () {
       req.session.user = user;
-      res.redirect('/');
+      res.redirect('/library');
     });
   });
 });
@@ -41,7 +41,7 @@ router.post('/', function createUser(req, res) {
     if (err) {
       res.render('user/new', {err: err});
     } else {
-      res.redirect('/');
+      res.redirect('/library');
     }
   });
 });

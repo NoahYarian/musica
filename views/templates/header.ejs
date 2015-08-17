@@ -2,11 +2,12 @@
   <ul>
     <li><a href='/'>Home</a></li>
     <% if (user) { %>
-      <li><a href='/artist'>Artist</a></li>
-      <li><a href='/album'>Album</a></li>
-      <li><a href='/user/logout'>Logout</a></li>
+      <li><a href='/library'>My Library</a></li>
+      <li><a href='/artist'>Add an Artist</a></li>
+      <li><a href='/album'>Add an Album</a></li>
+      <li><a href='/user/logout'>Log Out</a></li>
     <% } else { %>
-      <li><a href='/user/login'>Login</a></li>
+      <li><a href='/user/login'>Log In</a></li>
       <li><a href='/user/new'>Register</a></li>
     <% } %>
   </ul>

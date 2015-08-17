@@ -4,30 +4,30 @@
   <body>
     <%- include('header') %>
     <h1>ADD AN ALBUM</h1>
-    <form class='pure-form-aligned' action='/album/add' method='post'>
+    <form class='pure-form-aligned' action='/album/add' method='POST'>
       <fieldset>
         <div class="pure-control-group">
           <label for="artist">Artist</label>
-          <input class='artistSearch' id="artist" type="text" placeholder="Artist">
+          <input class='artistSearch' name="artist" type="text" placeholder="Artist" value='<%= artist %>'>
         </div>
         <div class="pure-control-group">
           <label for="title">Title</label>
-          <input id="title" type="text" placeholder="Title">
+          <input name="title" type="text" placeholder="Title">
         </div>
         <div class="pure-control-group">
           <label for="year">Year</label>
-          <input id="year" type="text" placeholder="Year">
+          <input name="year" type="text" placeholder="Year">
         </div>
         <div class="pure-control-group">
           <label for="art">Album Art</label>
-          <input id="art" type="text" placeholder="Album Art URL">
+          <input name="art" type="text" placeholder="Album Art URL">
         </div>
         <div class="pure-control-group">
           <label for="wiki">Wiki</label>
-          <input id="wiki" type="text" placeholder="Wiki URL">
+          <input name="wiki" type="text" placeholder="Wiki URL">
         </div>
         <div class="pure-controls">
-          <button type="submit" class="pure-button pure-button-primary">Submit</button>
+          <input type="submit" class="pure-button pure-button-primary">
         </div>
       </fieldset>
     </form>

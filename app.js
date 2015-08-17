@@ -27,13 +27,13 @@ app.use(session({
   saveUninitialized: true
 }));
 
-app.use(function (req, res, next) {
-  // req.session.regenerate(function () {
-    console.log('SESSION---->', req.session);
-    console.log(req.sessionID);
-    next();
-  // });
-});
+// app.use(function (req, res, next) {
+//   // req.session.regenerate(function () {
+//     console.log('SESSION---->', req.session);
+//     console.log(req.sessionID);
+//     next();
+//   // });
+// });
 
 app.use(lessCSS('www'));
 

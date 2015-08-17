@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+  <%- include('head', {page: 'Library'}) %>
+  <body>
+    <%- include('header') %>
+    <h1>YOUR LIBRARY</h1>
+    <div class='artists'>
+      <h1>ARTISTS</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Genre</th>
+          </tr>
+        </thead>
+        <tbody>
+        <% artists.forEach(function(artist) { %>
+          <tr>
+            <td><%= artist.name %></td>
+            <td><%= artist.genre %></td>
+            <td>
+              <form action='/artist/<%= artist._id %>/delete' method='POST'>
+                <input type='submit' value='Delete'>
+              </form>
+            </td>
+            <td>
+              <form action='/artist/<%= artist._id %>/addAlbum' method='POST'>
+                <input type='submit' value='Add Album'>
+              </form>
+            </td>
+          </tr>
+          <% }); %>
+        </tbody>
+      </table>
+    </div>
+    <div class='albums'>
+      <h1>ALBUMS</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Artist</th>
+            <th>Title</th>
+            <th>Year</th>
+            <th>Album Art</th>
+            <th>Wiki</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% albums.forEach(function(album) { %>
+            <tr>
+              <td><%= album.artist %></td>
+              <td><%= album.title %></td>
+              <td><%= album.year %></td>
+              <td><img class='albumArt' src='<%= album.art %>'></td>
+              <td>
+                <form action='/album/<%= album._id %>/delete' method='POST'>
+                  <input type='submit' value='Delete'>
+                </form>
+              </td>
+            </tr>
+          <% }); %>
+        </tbody>
+      </table>
+    </div>
+    <%- include('javascripts') %>
+  </body>
+</html>
