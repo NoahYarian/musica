@@ -2,11 +2,7 @@
 <html>
   <%- include('head', {page: 'Add an Artist'}) %>
   <body>
-    <div>
-      <a href='/artist'>Add an artist</a>
-      <a href='/album'>Add an album</a>
-      <a href='/'>Index</a>
-    </div>
+    <%- include('header') %>
     <h1>ADD AN ARTIST</h1>
     <form action='/artist/add' method='post'>
       Name: <input name='name' placeholder='Jimi Bolton'>

@@ -2,22 +2,37 @@
 <html>
   <%- include('head', {page: 'Add an Album'}) %>
   <body>
-    <div>
-      <a href='/artist'>Add an artist</a>
-      <a href='/album'>Add an album</a>
-      <a href='/'>Index</a>
-    </div>
+    <%- include('header') %>
     <h1>ADD AN ALBUM</h1>
-    <form action='/album/add' method='post'>
-      Group: <input name='group' placeholder='Start typing to populate...'>
-      Album Name: <input name='title' placeholder='Another Brick In the Wall'>
-      <input type='submit'>
+    <form class='pure-form-aligned' action='/album/add' method='post'>
+      <fieldset>
+        <div class="pure-control-group">
+          <label for="artist">Artist</label>
+          <input class='artistSearch' id="artist" type="text" placeholder="Artist">
+        </div>
+        <div class="pure-control-group">
+          <label for="title">Title</label>
+          <input id="title" type="text" placeholder="Title">
+        </div>
+        <div class="pure-control-group">
+          <label for="year">Year</label>
+          <input id="year" type="text" placeholder="Year">
+        </div>
+        <div class="pure-control-group">
+          <label for="art">Album Art</label>
+          <input id="art" type="text" placeholder="Album Art URL">
+        </div>
+        <div class="pure-control-group">
+          <label for="wiki">Wiki</label>
+          <input id="wiki" type="text" placeholder="Wiki URL">
+        </div>
+        <div class="pure-controls">
+          <button type="submit" class="pure-button pure-button-primary">Submit</button>
+        </div>
+      </fieldset>
     </form>
-    <div class='artistsResultsList'>
-      <% artistResults.forEach(function(artist) { %>
-        <div><a href='#'><%= artist.name %></a></div>
-      <% }); %>
-    </div>
+    <div class='results'></div>
     <%- include('javascripts') %>
+    <script src='/js/album.js'></script>
   </body>
 </html>

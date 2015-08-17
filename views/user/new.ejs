@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+  <%- include('../templates/head', {page: 'Sign Up'}) %>
+  <body>
+    <%- include('../templates/header') %>
+    <div class='register'>
+      <h1>Sign Up</h1>
+      <form class='pure-form-aligned' action='/user' method='POST'>
+        <fieldset>
+          <legend>Registration</legend>
+          <div class="pure-control-group">
+            <label for="email">Email</label>
+            <input name="email" type="email" placeholder="abc@xyz.com">
+          </div>
+          <div class="pure-control-group">
+            <label for="password">Passsword</label>
+            <input name="password" type="password" placeholder='password'>
+          </div>
+          <div class="pure-control-group">
+            <label for="password_confirm">Confirm Password</label>
+            <input name="password_confirm" type="password" placeholder="Confirm Password">
+          </div>
+          <div class="pure-controls">
+            <input type="submit" class="pure-button pure-button-primary">
+          </div>
+        </fieldset>
+      </form>
+    </div>
+    <%- include('../templates/javascripts') %>
+  </body>
+</html>

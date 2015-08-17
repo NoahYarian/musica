@@ -6,6 +6,13 @@ router.get('/', function (req, res) {
   res.render('templates/artist');
 });
 
+router.get('/get', function (req, res) {
+  var collection = global.db.collection('artists');
+  var artists = collection.find().toArray(function(err, artists) {
+    res.send(artists);
+  });
+});
+
 router.post('/add', function (req, res) {
   var collection = global.db.collection('artists');
   collection.save(req.body, function () {

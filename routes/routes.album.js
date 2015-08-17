@@ -10,8 +10,10 @@ router.get('/', function (req, res) {
 });
 
 router.post('/add', function (req, res) {
-  var collection = global.db.collection('albums');
-  collection.save(req.body, function () {
+  var collection = global.db.collection('artists');
+  collection.find()
+  var collection2 = global.db.collection('albums');
+  collection2.save(req.body, function () {
     res.redirect('/');
   });
 });

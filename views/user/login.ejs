@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+  <%- include('../templates/head', {page: 'Log in'}) %>
+  <body>
+    <%- include('../templates/header') %>
+    <div class='login'>
+      <h1>Log In</h1>
+      <form class='pure-form-aligned' action='/user/login' method='POST'>
+        <fieldset>
+          <div class="pure-control-group">
+            <label for="email">Email</label>
+            <input name="email" type="email" placeholder="abc@xyz.com">
+          </div>
+          <div class="pure-control-group">
+            <label for="password">Passsword</label>
+            <input name="password" type="password" placeholder='password'>
+          </div>
+          <div class="pure-controls">
+            <input type="submit" class="pure-button pure-button-primary" value='Log In'>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+    <%- include('../templates/javascripts') %>
+  </body>
+</html>

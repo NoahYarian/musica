@@ -2,11 +2,7 @@
 <html>
   <%- include('head', {page: 'Welcome Traveler'}) %>
   <body>
-    <div>
-      <a href='/artist'>Add an artist</a>
-      <a href='/album'>Add an album</a>
-      <a href='/'>Index</a>
-    </div>
+    <%- include('header') %>
     <div class='artists'>
       <h1>ARTISTS</h1>
       <table>
@@ -36,15 +32,19 @@
       <table>
         <thead>
           <tr>
-            <th>Group</th>
+            <th>Artist</th>
             <th>Title</th>
+            <th>Year</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
           <% albums.forEach(function(album) { %>
             <tr>
-              <td><%= album.group %></td>
+              <td><%= album.artist %></td>
               <td><%= album.title %></td>
+              <td><%= album.year %></td>
+              <td><img class='albumArt' src='<%= album.art %>'></td>
               <td>
                 <form action='/album/<%= album._id %>/delete' method='POST'>
                   <input type='submit' value='Delete'>
